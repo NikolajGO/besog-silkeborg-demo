@@ -1,0 +1,328 @@
+/* Fjerner margins på body */
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    overflow: hidden;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+/* overgange mellem sider */
+.page-transition {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-origin: center center;
+}
+
+.page-transition.enter {
+    animation: pageEnter 0.5s ease forwards;
+}
+
+.page-transition.leave {
+    animation: pageLeave 0.5s ease forwards;
+}
+
+@keyframes pageEnter {
+    from {
+        transform: scale(1.08);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes pageLeave {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1.08);
+        opacity: 0;
+    }
+}
+
+/* Container til video + overlay */
+.video-wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+/* Container til video + overlay */
+.video-wrapper-2 {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/*.test{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}*/
+
+/* Videoen i baggrunden */
+#bgVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* dækker hele skærmen */
+    z-index: 1;
+}
+
+.billede-baggrund{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    z-index: 1;
+}
+
+/* SVG overlay */
+.svg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;          /* oven på videoen */
+    pointer-events: none; /* SVG i sig selv ikke klikbar */
+}
+
+
+.hero-title {
+    position: absolute;
+    bottom: 160px;
+    right: 130px;
+
+    text-align: right;
+    color: white;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    z-index: 30;
+}
+
+.hero-title h1 {
+    margin: 0;
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.hero-title p {
+    margin: 30px 0 0 0;
+    font-size: 50px;
+}
+
+/* Klikbart element */
+.hotspot {
+    display: none;
+    position: absolute;
+    top: 45%;
+    left: 21%;
+    z-index: 20;
+}
+
+.hotspot.active {
+    display: block;
+}
+
+.hotspot-icon {
+    width: 50px;
+    height: 50px;
+    display: block;
+    cursor: pointer;
+    pointer-events: auto;
+
+    transform: translate(-50%, -100%) scale(1);
+    transform-origin: center bottom;
+    transition: transform 0.25s ease;
+    animation: floatIcon 2s ease-in-out infinite;
+}
+
+.hotspot:hover .hotspot-icon {
+    animation: none;
+    transform: translate(-50%, -100%) scale(1.3);
+}
+
+@keyframes floatIcon {
+    0% {
+        transform: translate(-50%, -100%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -115%) scale(1);
+    }
+    100% {
+        transform: translate(-50%, -100%) scale(1);
+    }
+}
+
+.hotspot-label {
+    position: absolute;
+    left: 0;
+    top: -10px;
+
+    transform: translate(10px, -42px);
+    opacity: 0;
+
+    background: #7dbee5;
+    padding: 8px 40px;
+    border-radius: 0px;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hotspot:hover .hotspot-label {
+    opacity: 1;
+    transform: translate(35px, -42px);
+}
+
+
+.bottom-menu {
+    position: absolute; /* brug fixed hvis den altid skal sidde nederst på skærmen */
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px;
+    background: rgba(107, 145, 158, 0.5);
+    /*backdrop-filter: blur(4px);*/
+    border-radius: 999px;
+
+    z-index: 100;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 12px 18px;
+    border-radius: 999px;
+
+    color: white;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+
+    transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-1px);
+}
+
+.menu-item.active {
+    background: #ff7a59;
+}
+
+.icon {
+    font-size: 18px;
+    line-height: 1;
+}
+
+/*styles på andre sider */
+
+.content {
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    max-width: 500px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    z-index: 2;
+}
+
+/* Overskrift */
+.title {
+    font-size: 80px;
+    opacity: 0;
+    transform: translateX(-60px);
+
+    animation: titleFade 1s ease forwards;
+}
+
+/* Brødtekst */
+.text {
+    font-size: 20px;
+    opacity: 0;
+    transform: translateY(-20px);
+
+    animation: textFade 1s ease forwards;
+    animation-delay: 0.6s;
+}
+
+/* Animationer */
+
+@keyframes titleFade {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes textFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Ting til generelt brug*/
+
+/*tilbageknap*/
+.back-button {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+
+    padding: 10px 18px;
+    border-radius: 30px;
+
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(6px);
+
+    color: white;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+
+    z-index: 10;
+
+    transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+    background: rgba(0,0,0,0.6);
+    transform: translateY(-2px);
+}

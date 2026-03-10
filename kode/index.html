@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit Silkeborg</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="../ikoner/hjemmeside logo.png">
+</head>
+<body>   
+
+    <div class="video-wrapper">
+        <div class="page-transition">    
+            <!-- Hotspot-ikon ovenpå videoen -->
+
+            <div class="hero-title">
+                <h1>Besøg Silkeborg</h1>
+                <p>Her er dejligt!</p>
+            </div>
+
+            <!-- Baggrundsvideo -->
+
+            <video autoplay muted loop playsinline id="bgVideo">
+                <source src="../videoer/rendertest_MP4_1.mp4" type="video/mp4">
+            </video>
+
+            <a href="papirtaarnet.html" class="hotspot hotspot-link" data-category="Beboelse" style="top: 45%; left: 21%;">
+                <img src="../ikoner/place-ui-pin-svgrepo-com_blå.png"
+                    class="hotspot-icon"
+                    alt="Hotspot">
+
+                <div class="hotspot-label">
+                    Papirtårnet
+                </div>
+            </a>
+
+            <a href="rådhuset.html" class="hotspot hotspot-link" data-category="kultur" style="top: 32%; left: 80%;">
+                <img src="../ikoner/place-ui-pin-svgrepo-com_blå.png"
+                    class="hotspot-icon"
+                    alt="Hotspot">
+
+                <div class="hotspot-label">
+                    Rådhuset
+                </div>
+            </a>
+
+            <a href="silkeborg_museum.html" class="hotspot hotspot-link" data-category="kultur" style="top: 22%; left: 50%;">
+                <img src="../ikoner/place-ui-pin-svgrepo-com_blå.png"
+                    class="hotspot-icon"
+                    alt="Hotspot">
+
+                <div class="hotspot-label">
+                    Museet
+                </div>
+            </a>
+
+            <a href="slotsholmen.html" class="hotspot hotspot-link" data-category="natur" style="top: 83%; left: 35%;">
+                <img src="../ikoner/place-ui-pin-svgrepo-com_blå.png"
+                    class="hotspot-icon"
+                    alt="Hotspot">
+
+                <div class="hotspot-label">
+                    Slotsholmen
+                </div>
+            </a>
+
+            <nav class="bottom-menu">
+
+                <a href="#" class="menu-item active" data-filter="kultur">
+                    <span class="icon">🏛</span>
+                    <span>Kultur</span>
+                </a>
+
+                <a href="#" class="menu-item" data-filter="spisesteder">
+                    <span class="icon">🍽</span>
+                    <span>Spisesteder</span>
+                </a>
+
+                <a href="#" class="menu-item" data-filter="natur">
+                    <span class="icon">🌿</span>
+                    <span>Natur</span>
+                </a>
+
+                <a href="#" class="menu-item" data-filter="aktiviteter">
+                    <span class="icon">🚴</span>
+                    <span>Aktiviteter</span>
+                </a>
+
+                <a href="#" class="menu-item" data-filter="Beboelse">
+                    <span class="icon">💎</span>
+                    <span>Beboelse</span>
+                </a>
+
+                <a href="#" class="menu-item" data-filter="overnatning">
+                    <span class="icon">🛏</span>
+                    <span>Overnatning</span>
+                </a>
+
+            </nav>
+
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
